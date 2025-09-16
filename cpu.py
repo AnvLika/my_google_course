@@ -1,13 +1,23 @@
-import os
-import sys
+import psutil
+def check_cpu_usage(percent):
+    usage = psutil.cpu_percent()
+    return usage < percent
+if not check_cpu_usage(75):
+    print("ERROR! CPU is overloaded")
+else:
+    print("Everything ok")
 
-def check_reboot():
-    """Returns True if the computer has a pending reboot."""
-    return os.path.exists("/run/reboot-required")
 
-def main():
-    if check_reboot():
-        print("Pending Reboot.")
-        sys.exit(1)
 
-main()
+#
+#
+# import psutil
+# def check_cpu_usage(percent):
+#     usage = psutil.cpu_percent(1)
+#     print("DEBUG: usage: {}".format(usage))
+#     return usage < percent
+# if not check_cpu_usage(75):
+#     print("ERROR! CPU is overloaded")
+# else:
+#     print("Everything ok")
+#
