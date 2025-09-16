@@ -1,0 +1,19 @@
+we have 2 files : file1 and file2 they have difference in one line.
+
+to check what is different : diff -u  file1.py file2.py
+to save this difference of file1 compare to file2:  diff -u  file1.py file2.py > change.diff
+to apply changes(the difference)  to the file1 to fix an issue we need : pathc file1.py < change.diff
+
+
+
+to open any file: vim change.diff
+to change : i
+to save: :w - write (save) the file, but don't exit
+:wq or :x or ZZ - write (save) and quit
+
+here is the chit list:    https://vim.rtorr.com/
+
+
+to run the puthon code use : python -i file1_fix.py
+to exit execution of the python code type "exit"
+
